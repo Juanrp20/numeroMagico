@@ -2,19 +2,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Numero Magico</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     
     <div class="contenedor">
-        <h1>Numero Mágico</h1>
-        <p>Adivina el número entre 1 y 100</p>
+        <h1>Numero Magico</h1>
+        <p>Adivina el numero entre 1 y 100</p>
         
-        <input type="number" id="numeroUsuario" placeholder="Escribe un numero">
-        <button onclick="adivinar()">Intentar</button>
-        
+        <form onsubmit="adivinar(); return false;">
+            <input type="number" id="numeroUsuario" placeholder="Escribe un numero" min="1" max="100">
+            <button type="submit">Intentar</button>
+        </form>
+
         <p id="mensaje"></p>
+
+        <p><strong>Intentos:</strong> <span id="intentos">1</span>/10</p>
+
+        <p><strong>Numeros intentados:</strong></p>
+        <ul id="listaIntentos"></ul>
+
+        <button id="reiniciar" onclick="reiniciarJuego()" style="display:none;">
+            Jugar de nuevo
+        </button>
     </div>
 
     <script src="source/script.js"></script>
